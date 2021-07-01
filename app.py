@@ -10,5 +10,7 @@ from aws_cdk import core
 from cdk.cdk_stack import CdkStack
 
 app = core.App()
-CdkStack(app, "VPCtest-trip",env=core.Environment(account="xxx", region="ap-southeast-1"))
+ProductStack = CdkStack(app, "VPCtest-trip",env=core.Environment(account="xxx", region="ap-southeast-1"))
+Tags.of(ProduktStack).add("key","values")
+ProductStack.vpcoutput()
 app.synth()
